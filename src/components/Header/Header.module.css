@@ -1,0 +1,82 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.conSombra {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+
+.logo:hover {
+  color: #0070f3;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.listaNav {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.linkNav {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.linkNav:hover {
+  color: #0070f3;
+}
+
+.linkLinkedIn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0070f3;
+  text-decoration: none;
+  border: 1.5px solid #0070f3;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.linkLinkedIn:hover {
+  background-color: #0070f3;
+  color: #ffffff;
+}
+
+/* Mobile: ocultar labels de nav en pantallas pequeñas */
+@media (max-width: 767px) {
+  .listaNav {
+    display: none;
+  }
+}

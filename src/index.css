@@ -1,5 +1,11 @@
-/* Reset básico */
-*, *::before, *::after {
+/* Reset y estilos base globales */
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,4 +14,7 @@
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
+  color: #1a1a2e;
+  background-color: #f8f9fa;
+  -webkit-font-smoothing: antialiased;
 }
