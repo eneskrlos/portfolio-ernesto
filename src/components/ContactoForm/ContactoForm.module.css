@@ -1,0 +1,142 @@
+.seccion {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+}
+
+.contenedor {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.etiqueta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.input,
+.textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  background-color: #ffffff;
+  border: 1.5px solid #dee2e6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.12);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Estado de error en el campo */
+.inputError {
+  border-color: #dc3545;
+}
+
+.inputError:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12);
+}
+
+.error {
+  font-size: 0.82rem;
+  color: #dc3545;
+}
+
+.botonEnviar {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.botonEnviar:hover {
+  background-color: #005fd4;
+}
+
+/* Panel de éxito */
+.panelExito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  padding: 48px 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.mensajeExito {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+
+.botonReiniciar {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0070f3;
+  background-color: transparent;
+  border: 1.5px solid #0070f3;
+  border-radius: 8px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.botonReiniciar:hover {
+  background-color: #0070f3;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .titulo {
+    font-size: 1.5rem;
+    margin-bottom: 36px;
+  }
+
+  .botonEnviar {
+    width: 100%;
+    text-align: center;
+  }
+}
