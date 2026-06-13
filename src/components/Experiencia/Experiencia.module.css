@@ -1,0 +1,87 @@
+.seccion {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/* Timeline: línea vertical a la izquierda, items con punto */
+.timeline {
+  list-style: none;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 32px;
+}
+
+/* Línea vertical continua */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: #dee2e6;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 36px;
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* Punto circular sobre la línea */
+.punto {
+  position: absolute;
+  left: -29px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #0070f3;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px #0070f3;
+  flex-shrink: 0;
+}
+
+.datos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.empresa {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.periodo {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+@media (max-width: 767px) {
+  .titulo {
+    font-size: 1.5rem;
+    margin-bottom: 36px;
+  }
+}
