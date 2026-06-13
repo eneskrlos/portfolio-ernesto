@@ -1,5 +1,5 @@
 # Plan de Implementación: Portfolio Ernesto Carlos
-**Estado**: ⏳ Pendiente de aprobación
+**Estado**: ✅ Completado
 **Basado en**: docs/spec.md v1.0
 **Stack**: React + Vite + CSS Modules + Vitest
 
@@ -389,16 +389,16 @@ npm run build  # debe generar dist/ sin errores
 
 | # | Tarea | Tests | Estado |
 |---|---|---|---|
-| 0 | Inicializar proyecto | Entorno funciona | ⏳ |
-| 1 | Archivo de datos | 8 tests | ⏳ |
-| 2 | Header + navegación | 4 tests | ⏳ |
-| 3 | Hero / Sobre mí | 6 tests | ⏳ |
-| 4 | Experiencia | 4 tests | ⏳ |
-| 5 | Proyectos | 4 tests | ⏳ |
-| 6 | Habilidades | 4 tests | ⏳ |
-| 7 | Formulario de contacto | 8 tests | ⏳ |
-| 8 | Footer | 4 tests | ⏳ |
-| 9 | Integración + estilos | Revisión visual + build | ⏳ |
-| 10 | Revisión final | Build limpio | ⏳ |
+| 0 | Inicializar proyecto | Entorno funciona | ✅ |
+| 1 | Archivo de datos | 8 tests | ✅ |
+| 2 | Header + navegación | 4 tests | ✅ |
+| 3 | Hero / Sobre mí | 6 tests | ✅ |
+| 4 | Experiencia | 4 tests | ✅ |
+| 5 | Proyectos | 4 tests | ✅ |
+| 6 | Habilidades | 4 tests | ✅ |
+| 7 | Formulario de contacto | 8 tests | ✅ |
+| 8 | Footer | 4 tests | ✅ |
+| 9 | Integración + estilos | Revisión visual + build | ✅ |
+| 10 | Revisión final | Build limpio | ✅ |
 
 **Total de tests automatizados: 42**

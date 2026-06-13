@@ -92,6 +92,16 @@ Herramientas: Git, GitHub
 - Usar librerías de animación pesadas (no Framer Motion, no GSAP)
 - Saltarte la capa de src/data/contenido.js
 
+## Decisiones técnicas tomadas durante la implementación
+
+- `vitest` requiere `passWithNoTests: true` en la config para no fallar cuando no hay archivos de test (relevante al inicializar el proyecto)
+- El componente `Hero` usa `onError` en la `<img>` para mostrar un `<div>` con las iniciales "EC" como fallback; el estado `fotoFallo` lo controla con `useState`
+- El Header agrega la clase `conSombra` al hacer scroll > 50px via `useEffect` con `window.addEventListener`; el cleanup del listener se hace en el return del efecto
+- La validación del formulario (`ContactoForm`) vive en una función `validar()` separada del componente para facilitar su testing y futura integración con EmailJS
+- Los tests de componentes usan `fireEvent` de `@testing-library/react` (no `userEvent`) por simplicidad; es suficiente para validar la lógica de UI
+- La carpeta `tests/` está en la raíz (no dentro de `src/`) siguiendo la estructura del plan; Vitest la detecta automáticamente con el patrón `**/*.{test,spec}.?(c|m)[jt]s?(x)`
+- `dist/` no se commitea (está en `.gitignore` generado por Vite)
+
 ## Cómo correr el proyecto
 ```bash
 npm run dev    # servidor de desarrollo
