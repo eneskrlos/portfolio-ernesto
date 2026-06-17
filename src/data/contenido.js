@@ -5,7 +5,13 @@ export const perfil = {
   nombre: 'Ernesto Carlos Pérez García',
   titulo: 'Ingeniero de Software',
   descripcion:
-    'Apasionado por la programación con +7 años de experiencia construyendo productos digitales. Me especializo en desarrollo web full-stack, trabajo en equipo y aprendizaje continuo.',
+    `
+    Desarrollador Full Stack con más de 7 años de experiencia en desarrollo de software, especializado en Java
+Spring Boot y React.js. Sólida trayectoria en arquitecturas de microservicios, APIs REST, bases de datos
+relacionales y entornos cloud (AWS, Azure). Experiencia comprobada en sistemas de integración complejos,
+automatización de datos y soporte de infraestructura Linux.
+    
+    `,
   email: 'erneskrlos@gmail.com',
   telefono: '+59892738549',
   linkedin: 'https://www.linkedin.com/in/ernesto-carlos-perez-garcias-6176a312a',
@@ -15,6 +21,14 @@ export const perfil = {
 }
 
 export const experiencia = [
+  {
+    empresa: 'Bold MSS',
+    periodo: 'Jun 2025 – Mar 2026',
+  },
+  {
+    empresa: 'Squaads',
+    periodo: 'Dic 2024 – Sep 2025',
+  },
   {
     empresa: 'CodeBerrySolutions',
     periodo: '2023–2024',
@@ -63,7 +77,8 @@ export const proyectos = [
 export const habilidades = {
   frontend: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Vue.js', 'Material UI', 'Bootstrap'],
   backend: ['Node.js', 'C#', 'ASP.NET', 'ASP.NET Core', 'Java', 'Spring Boot', 'JPA', 'Maven'],
-  herramientas: ['Git', 'GitHub'],
+  herramientas: ['Git', 'GitFlow','GitHub', 'Docker', 'AWS', 'Linux', 'Power Automate', 'Power BI', 'Proxmox', 'Web Scraping'],
+  metodologias: ['Spec Driven Development ','REST' ,'MVC ', 'Scrum / Agile'],
 }
 
 export const navLinks = [
