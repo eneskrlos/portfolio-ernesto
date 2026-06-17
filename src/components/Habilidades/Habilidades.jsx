@@ -5,6 +5,7 @@ const categorias = [
   { clave: 'frontend', etiqueta: 'Frontend' },
   { clave: 'backend',  etiqueta: 'Backend' },
   { clave: 'herramientas', etiqueta: 'Herramientas' },
+  { clave: 'metodologias', etiqueta: 'Metodologías' },
 ]
 
 function Habilidades() {
