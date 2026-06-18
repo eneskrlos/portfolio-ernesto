@@ -92,6 +92,22 @@
   background-color: #005fd4;
 }
 
+.botonEnviar:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error al intentar enviar con EmailJS */
+.errorEnvio {
+  font-size: 0.9rem;
+  color: #dc3545;
+  background-color: #fff5f5;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 4px;
+}
+
 /* Panel de éxito */
 .panelExito {
   display: flex;

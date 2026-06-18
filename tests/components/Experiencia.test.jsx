@@ -4,16 +4,16 @@ import Experiencia from '../../src/components/Experiencia/Experiencia.jsx'
 import { experiencia } from '../../src/data/contenido.js'
 
 describe('Experiencia', () => {
-  it('renderiza exactamente 4 ítems de experiencia', () => {
+  it('renderiza exactamente 6 ítems de experiencia', () => {
     render(<Experiencia />)
     const items = screen.getAllByRole('listitem')
-    expect(items).toHaveLength(4)
+    expect(items).toHaveLength(6)
   })
 
-  it('el primer ítem es "CodeBerrySolutions"', () => {
+  it('el primer ítem es "Bold MSS"', () => {
     render(<Experiencia />)
     const items = screen.getAllByRole('listitem')
-    expect(items[0]).toHaveTextContent('CodeBerrySolutions')
+    expect(items[0]).toHaveTextContent('Bold MSS')
   })
 
   it('cada ítem muestra el nombre de la empresa', () => {
