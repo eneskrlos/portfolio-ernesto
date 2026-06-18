@@ -76,6 +76,9 @@ Herramientas: Git, GitHub
 4. Plataforma de Gestión para el Turismo — Vue.js, Bootstrap, C#, ASP.NET Core
 
 ## Reglas para el agente
+## Spec activa
+- Versión actual: docs/spec-v1.1.md
+- Versión anterior: docs/spec-v1.0.md (referencia histórica, no modificar)
 
 ### Lo que SIEMPRE debes hacer
 - Leer docs/spec.md antes de implementar cualquier cosa
