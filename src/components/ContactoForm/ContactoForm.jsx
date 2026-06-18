@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styles from './ContactoForm.module.css'
+import { enviarEmail } from '../../utils/enviarEmail'
+import { perfil } from '../../data/contenido'
 
 const ESTADO_INICIAL = {
   nombre: '',
@@ -38,6 +40,8 @@ function ContactoForm() {
   const [campos, setCampos] = useState(ESTADO_INICIAL)
   const [errores, setErrores] = useState({})
   const [enviado, setEnviado] = useState(false)
+  const [enviando, setEnviando] = useState(false)
+  const [errorEnvio, setErrorEnvio] = useState(null)
 
   const manejarCambio = (e) => {
     const { name, value } = e.target
@@ -48,20 +52,37 @@ function ContactoForm() {
     }
   }
 
-  const manejarSubmit = (e) => {
+  const manejarSubmit = async (e) => {
     e.preventDefault()
+
+    // 1. Validar — si hay errores, mostrarlos y detener el envío
     const nuevosErrores = validar(campos)
     if (Object.keys(nuevosErrores).length > 0) {
       setErrores(nuevosErrores)
       return
     }
-    setEnviado(true)
+
+    // 2. Llamar a EmailJS
+    setEnviando(true)
+    setErrorEnvio(null)
+    const resultado = await enviarEmail(campos)
+    setEnviando(false)
+
+    if (resultado.exito) {
+      setEnviado(true)
+    } else {
+      // El email de contacto directo viene de contenido.js, nunca hardcodeado
+      setErrorEnvio(
+        `Hubo un problema al enviar. Escríbeme directamente a ${perfil.email}`
+      )
+    }
   }
 
   const reiniciar = () => {
     setCampos(ESTADO_INICIAL)
     setErrores({})
     setEnviado(false)
+    setErrorEnvio(null)
   }
 
   if (enviado) {
@@ -70,8 +91,8 @@ function ContactoForm() {
         <div className={styles.contenedor}>
           <div className={styles.panelExito}>
             <p className={styles.mensajeExito}>
-              Gracias <strong>{campos.nombre}</strong>, recibimos tu mensaje.
-              Te contactaremos a <strong>{campos.email}</strong>.
+              ¡Gracias <strong>{campos.nombre}</strong>! Tu mensaje fue enviado.
+              Te responderé pronto a <strong>{campos.email}</strong>.
             </p>
             <button onClick={reiniciar} className={styles.botonReiniciar}>
               Enviar otro mensaje
@@ -165,9 +186,18 @@ function ContactoForm() {
             )}
           </div>
 
-          <button type="submit" className={styles.botonEnviar}>
-            Enviar mensaje
+          <button
+            type="submit"
+            className={styles.botonEnviar}
+            disabled={enviando}
+          >
+            {enviando ? 'Enviando...' : 'Enviar mensaje'}
           </button>
+
+          {/* Mensaje de error si EmailJS falla */}
+          {errorEnvio && (
+            <p className={styles.errorEnvio}>{errorEnvio}</p>
+          )}
 
         </form>
       </div>
