@@ -11,8 +11,8 @@ describe('perfil', () => {
 })
 
 describe('experiencia', () => {
-  it('tiene exactamente 4 ítems', () => {
-    expect(experiencia).toHaveLength(4)
+  it('tiene exactamente 6 ítems', () => {
+    expect(experiencia).toHaveLength(6)
   })
 
   it('cada ítem tiene empresa y periodo', () => {
