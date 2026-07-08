@@ -1,6 +1,6 @@
 .seccion {
   padding: 80px 20px;
-  background-color: #ffffff;
+  background-color: var(--color-surface);
 }
 
 .contenedor {
@@ -11,7 +11,7 @@
 .titulo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--color-text);
   margin-bottom: 48px;
   text-align: center;
 }
@@ -31,7 +31,7 @@
 .categoria {
   font-size: 1rem;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--color-text);
   min-width: 120px;
   padding-top: 4px;
 }
@@ -46,16 +46,16 @@
 .badge {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #0055cc;
-  background-color: #e8f0fe;
+  color: var(--color-badge-text);
+  background-color: var(--color-badge-bg);
   padding: 6px 14px;
   border-radius: 20px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .badge:hover {
-  background-color: #0070f3;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
 }
 
 /* Mobile: categoría encima de los badges */

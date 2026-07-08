@@ -1,6 +1,6 @@
 .hero {
   padding: 140px 20px 80px;
-  background-color: #f8f9fa;
+  background-color: var(--color-bg);
 }
 
 .contenedor {
@@ -18,14 +18,14 @@
 
 .saludo {
   font-size: 1.1rem;
-  color: #6c757d;
+  color: var(--color-text-secondary);
   margin-bottom: 8px;
 }
 
 .nombre {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--color-text);
   line-height: 1.2;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
@@ -34,13 +34,13 @@
 .titulo {
   font-size: 1.4rem;
   font-weight: 500;
-  color: #0070f3;
+  color: var(--color-primary);
   margin-bottom: 20px;
 }
 
 .descripcion {
   font-size: 1.05rem;
-  color: #6c757d;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   max-width: 520px;
   margin-bottom: 36px;
@@ -64,25 +64,25 @@
 }
 
 .botonPrimario {
-  background-color: #0070f3;
-  color: #ffffff;
-  border: 2px solid #0070f3;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border: 2px solid var(--color-primary);
 }
 
 .botonPrimario:hover {
-  background-color: #005fd4;
-  border-color: #005fd4;
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
 }
 
 .botonSecundario {
   background-color: transparent;
-  color: #0070f3;
-  border: 2px solid #0070f3;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .botonSecundario:hover {
-  background-color: #0070f3;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
 }
 
 /* Columna derecha */
@@ -99,8 +99,8 @@
 }
 
 .placeholder {
-  background-color: #0070f3;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
   font-size: 3.5rem;
   font-weight: 700;
   display: flex;
