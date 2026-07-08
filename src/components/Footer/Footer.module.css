@@ -15,7 +15,7 @@
 
 .copyright {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: var(--color-text-secondary);
 }
 
 .links {
@@ -27,13 +27,13 @@
 
 .link {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 @media (max-width: 767px) {

@@ -4,12 +4,12 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: #ffffff;
+  background-color: var(--color-header-bg);
   transition: box-shadow 0.3s ease;
 }
 
 .conSombra {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px var(--color-shadow);
 }
 
 .contenedor {
@@ -25,13 +25,13 @@
 .logo {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--color-text);
   text-decoration: none;
   letter-spacing: -0.3px;
 }
 
 .logo:hover {
-  color: #0070f3;
+  color: var(--color-primary);
 }
 
 .nav {
@@ -49,29 +49,29 @@
 .linkNav {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #6c757d;
+  color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .linkNav:hover {
-  color: #0070f3;
+  color: var(--color-primary);
 }
 
 .linkLinkedIn {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #0070f3;
+  color: var(--color-primary);
   text-decoration: none;
-  border: 1.5px solid #0070f3;
+  border: 1.5px solid var(--color-primary);
   padding: 6px 14px;
   border-radius: 6px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .linkLinkedIn:hover {
-  background-color: #0070f3;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
 }
 
 /* Mobile: ocultar labels de nav en pantallas pequeñas */

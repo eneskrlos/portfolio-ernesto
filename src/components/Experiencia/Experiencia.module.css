@@ -1,6 +1,6 @@
 .seccion {
   padding: 80px 20px;
-  background-color: #ffffff;
+  background-color: var(--color-surface);
 }
 
 .contenedor {
@@ -11,7 +11,7 @@
 .titulo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--color-text);
   margin-bottom: 48px;
   text-align: center;
 }
@@ -33,7 +33,7 @@
   top: 8px;
   bottom: 8px;
   width: 2px;
-  background-color: #dee2e6;
+  background-color: var(--color-border);
 }
 
 .item {
@@ -56,9 +56,9 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: #0070f3;
-  border: 3px solid #ffffff;
-  box-shadow: 0 0 0 2px #0070f3;
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 2px var(--color-primary);
   flex-shrink: 0;
 }
 
@@ -71,12 +71,12 @@
 .empresa {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--color-text);
 }
 
 .periodo {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: var(--color-text-secondary);
 }
 
 @media (max-width: 767px) {

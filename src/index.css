@@ -1,4 +1,33 @@
 /* Reset y estilos base globales */
+
+/* Variables CSS de color: modo claro (por defecto) */
+:root {
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-primary: #0070f3;
+  --color-text: #1a1a2e;
+  --color-text-secondary: #6c757d;
+  --color-badge-bg: #e8f0fe;
+  --color-badge-text: #1a56db;
+  --color-border: #e2e8f0;
+  --color-header-bg: rgba(248, 249, 250, 0.95);
+  --color-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Variables CSS de color: modo oscuro */
+[data-theme='dark'] {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-primary: #4493f8;
+  --color-text: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-badge-bg: #1c2d4a;
+  --color-badge-text: #79b8ff;
+  --color-border: #30363d;
+  --color-header-bg: rgba(13, 17, 23, 0.95);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -14,7 +43,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  color: #1a1a2e;
-  background-color: #f8f9fa;
+  color: var(--color-text);
+  background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
 }

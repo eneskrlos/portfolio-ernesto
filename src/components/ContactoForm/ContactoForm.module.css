@@ -1,6 +1,6 @@
 .seccion {
   padding: 80px 20px;
-  background-color: #f8f9fa;
+  background-color: var(--color-bg);
 }
 
 .contenedor {
@@ -11,7 +11,7 @@
 .titulo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--color-text);
   margin-bottom: 48px;
   text-align: center;
 }
@@ -31,16 +31,16 @@
 .etiqueta {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--color-text);
 }
 
 .input,
 .textarea {
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
-  color: #1a1a2e;
-  background-color: #ffffff;
-  border: 1.5px solid #dee2e6;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
   border-radius: 8px;
   padding: 10px 14px;
   width: 100%;
@@ -50,7 +50,7 @@
 
 .input:focus,
 .textarea:focus {
-  border-color: #0070f3;
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.12);
 }
 
@@ -78,8 +78,8 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #0070f3;
+  color: var(--color-surface);
+  background-color: var(--color-primary);
   border: none;
   border-radius: 8px;
   padding: 12px 28px;
@@ -93,7 +93,7 @@
 }
 
 .botonEnviar:disabled {
-  background-color: #6c757d;
+  background-color: var(--color-text-secondary);
   cursor: not-allowed;
 }
 
@@ -116,14 +116,14 @@
   gap: 24px;
   text-align: center;
   padding: 48px 24px;
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   border-radius: 12px;
-  border: 1px solid #e9ecef;
+  border: 1px solid var(--color-border);
 }
 
 .mensajeExito {
   font-size: 1.1rem;
-  color: #1a1a2e;
+  color: var(--color-text);
   line-height: 1.6;
 }
 
@@ -131,9 +131,9 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #0070f3;
+  color: var(--color-primary);
   background-color: transparent;
-  border: 1.5px solid #0070f3;
+  border: 1.5px solid var(--color-primary);
   border-radius: 8px;
   padding: 10px 22px;
   cursor: pointer;
@@ -141,8 +141,8 @@
 }
 
 .botonReiniciar:hover {
-  background-color: #0070f3;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
 }
 
 @media (max-width: 767px) {
