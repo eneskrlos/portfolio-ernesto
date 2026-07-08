@@ -211,9 +211,12 @@ CSS custom properties en `:root` y se sobreescriben en `[data-theme="dark"]`.
 ```css
 /* Modo claro (ya existente, se formaliza como variables) */
 :root {
+  /* Colores base */
   --color-bg: #f8f9fa;
   --color-surface: #ffffff;
   --color-primary: #0070f3;
+  --color-primary-hover: #005fd4;       /* azul oscurecido para estados hover */
+  --color-primary-focus: rgba(0, 112, 243, 0.12); /* anillo de foco translúcido */
   --color-text: #1a1a2e;
   --color-text-secondary: #6c757d;
   --color-badge-bg: #e8f0fe;
@@ -221,13 +224,27 @@ CSS custom properties en `:root` y se sobreescriben en `[data-theme="dark"]`.
   --color-border: #e2e8f0;
   --color-header-bg: rgba(248, 249, 250, 0.95);
   --color-shadow: rgba(0, 0, 0, 0.08);
+
+  /* Colores de error (formulario) */
+  --color-error: #dc3545;           /* texto y borde de error */
+  --color-error-bg: #fff5f5;        /* fondo del campo con error */
+  --color-error-border: #f5c2c7;    /* borde del campo con error */
+  --color-error-focus: rgba(220, 53, 69, 0.12); /* anillo de foco en campo con error */
+
+  /* Footer — siempre oscuro en ambos temas */
+  --color-footer-bg: #1a1a2e;
+  --color-footer-text: #e6edf3;
+  --color-footer-text-secondary: #8b949e;
 }
 
 /* Modo oscuro */
 [data-theme="dark"] {
+  /* Colores base */
   --color-bg: #0d1117;
   --color-surface: #161b22;
-  --color-primary: #4493f8;       /* azul más claro para mejor contraste */
+  --color-primary: #4493f8;         /* azul más claro para mejor contraste */
+  --color-primary-hover: #6ab0fa;   /* hover más claro en modo oscuro */
+  --color-primary-focus: rgba(68, 147, 248, 0.2); /* anillo de foco en modo oscuro */
   --color-text: #e6edf3;
   --color-text-secondary: #8b949e;
   --color-badge-bg: #1c2d4a;
@@ -235,6 +252,17 @@ CSS custom properties en `:root` y se sobreescriben en `[data-theme="dark"]`.
   --color-border: #30363d;
   --color-header-bg: rgba(13, 17, 23, 0.95);
   --color-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Colores de error en modo oscuro */
+  --color-error: #ff6b6b;           /* rojo más claro para mejor contraste */
+  --color-error-bg: #2d1515;        /* fondo oscuro para campos con error */
+  --color-error-border: #7f2d2d;    /* borde de error en modo oscuro */
+  --color-error-focus: rgba(255, 107, 107, 0.15); /* anillo de foco en modo oscuro */
+
+  /* Footer — mantiene los mismos valores en modo oscuro (siempre oscuro) */
+  --color-footer-bg: #1a1a2e;
+  --color-footer-text: #e6edf3;
+  --color-footer-text-secondary: #8b949e;
 }
 ```
 

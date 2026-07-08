@@ -70,8 +70,8 @@
 }
 
 .botonPrimario:hover {
-  background-color: #005fd4;
-  border-color: #005fd4;
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
 }
 
 .botonSecundario {

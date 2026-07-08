@@ -51,7 +51,7 @@
 .input:focus,
 .textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.12);
+  box-shadow: 0 0 0 3px var(--color-primary-focus);
 }
 
 .textarea {
@@ -61,17 +61,17 @@
 
 /* Estado de error en el campo */
 .inputError {
-  border-color: #dc3545;
+  border-color: var(--color-error);
 }
 
 .inputError:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12);
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px var(--color-error-focus);
 }
 
 .error {
   font-size: 0.82rem;
-  color: #dc3545;
+  color: var(--color-error);
 }
 
 .botonEnviar {
@@ -89,7 +89,7 @@
 }
 
 .botonEnviar:hover {
-  background-color: #005fd4;
+  background-color: var(--color-primary-hover);
 }
 
 .botonEnviar:disabled {
@@ -100,9 +100,9 @@
 /* Mensaje de error al intentar enviar con EmailJS */
 .errorEnvio {
   font-size: 0.9rem;
-  color: #dc3545;
-  background-color: #fff5f5;
-  border: 1px solid #f5c2c7;
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
   border-radius: 8px;
   padding: 12px 16px;
   margin-top: 4px;
