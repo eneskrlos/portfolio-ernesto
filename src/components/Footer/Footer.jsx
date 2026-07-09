@@ -1,12 +1,15 @@
 import { perfil } from '../../data/contenido.js'
+import { useIdioma } from '../../context/IdiomaContext.jsx'
 import styles from './Footer.module.css'
 
 function Footer() {
+  const { t } = useIdioma()
+
   return (
     <footer className={styles.footer}>
       <div className={styles.contenedor}>
         <p className={styles.copyright}>
-          © 2025 {perfil.nombre}
+          {t.footer.copyright}
         </p>
 
         <ul className={styles.links}>

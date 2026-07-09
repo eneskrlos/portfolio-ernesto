@@ -1,11 +1,14 @@
 import { proyectos } from '../../data/contenido.js'
+import { useIdioma } from '../../context/IdiomaContext.jsx'
 import styles from './Proyectos.module.css'
 
 function Proyectos() {
+  const { t } = useIdioma()
+
   return (
     <section id="proyectos" className={styles.seccion}>
       <div className={styles.contenedor}>
-        <h2 className={styles.titulo}>Proyectos Realizados</h2>
+        <h2 className={styles.titulo}>{t.proyectos.titulo}</h2>
 
         <div className={styles.grilla}>
           {proyectos.map((proyecto) => (

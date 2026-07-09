@@ -1,8 +1,13 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import Hero from '../../src/components/Hero/Hero.jsx'
+import { IdiomaProvider } from '../../src/context/IdiomaContext.jsx'
 
 describe('Hero', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
   it('renderiza el nombre completo de perfil', () => {
     render(<Hero />)
     expect(screen.getByText('Ernesto Carlos Pérez García')).toBeInTheDocument()
@@ -37,5 +42,20 @@ describe('Hero', () => {
     const imagen = screen.getByRole('img')
     fireEvent.error(imagen)
     expect(screen.getByText('EC')).toBeInTheDocument()
+  })
+
+  it('muestra "Hola, soy" en español', () => {
+    render(<Hero />)
+    expect(screen.getByText('Hola, soy')).toBeInTheDocument()
+  })
+
+  it('muestra "Hi, I\'m" en inglés', () => {
+    localStorage.setItem('idioma', 'en')
+    render(
+      <IdiomaProvider>
+        <Hero />
+      </IdiomaProvider>,
+    )
+    expect(screen.getByText("Hi, I'm")).toBeInTheDocument()
   })
 })

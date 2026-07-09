@@ -74,6 +74,33 @@
   color: var(--color-surface);
 }
 
+.selectorIdioma {
+  display: flex;
+  gap: 2px;
+}
+
+.botonIdioma {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.botonIdioma:hover {
+  color: var(--color-primary);
+}
+
+.botonIdioma.activo {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 .botonTema {
   font-size: 1.2rem;
   line-height: 1;

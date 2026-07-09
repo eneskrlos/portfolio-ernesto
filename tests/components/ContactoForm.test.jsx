@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react'
 import ContactoForm from '../../src/components/ContactoForm/ContactoForm.jsx'
+import { IdiomaProvider } from '../../src/context/IdiomaContext.jsx'
 
 // Mock del servicio de envío — los tests no hacen llamadas reales a EmailJS
 vi.mock('../../src/utils/enviarEmail.js', () => ({
@@ -26,6 +27,7 @@ describe('ContactoForm', () => {
   beforeEach(() => {
     // Por defecto el envío tiene éxito; cada test puede sobreescribirlo
     enviarEmail.mockResolvedValue({ exito: true, error: null })
+    localStorage.clear()
   })
 
   // ─── Renderizado ────────────────────────────────────────────────────────────
@@ -43,24 +45,24 @@ describe('ContactoForm', () => {
   it('al hacer submit vacío, muestra errores en todos los campos requeridos', () => {
     render(<ContactoForm />)
     fireEvent.click(screen.getByText('Enviar mensaje'))
-    expect(screen.getByText('El nombre es requerido.')).toBeInTheDocument()
-    expect(screen.getByText('El email es requerido.')).toBeInTheDocument()
-    expect(screen.getByText('Seleccioná un motivo.')).toBeInTheDocument()
-    expect(screen.getByText('El mensaje es requerido.')).toBeInTheDocument()
+    expect(screen.getByText('El nombre es requerido')).toBeInTheDocument()
+    expect(screen.getByText('El email no es válido')).toBeInTheDocument()
+    expect(screen.getByText('Selecciona un motivo', { selector: 'span' })).toBeInTheDocument()
+    expect(screen.getByText('El mensaje debe tener al menos 20 caracteres')).toBeInTheDocument()
   })
 
   it('un email sin "@" muestra error de formato', () => {
     render(<ContactoForm />)
     fireEvent.change(screen.getByLabelText('Email'), { target: { name: 'email', value: 'correosinArroba.com' } })
     fireEvent.click(screen.getByText('Enviar mensaje'))
-    expect(screen.getByText('Ingresá un email válido.')).toBeInTheDocument()
+    expect(screen.getByText('El email no es válido')).toBeInTheDocument()
   })
 
   it('un mensaje de menos de 20 caracteres muestra error', () => {
     render(<ContactoForm />)
     fireEvent.change(screen.getByLabelText('Mensaje'), { target: { name: 'mensaje', value: 'Corto' } })
     fireEvent.click(screen.getByText('Enviar mensaje'))
-    expect(screen.getByText('El mensaje debe tener al menos 20 caracteres.')).toBeInTheDocument()
+    expect(screen.getByText('El mensaje debe tener al menos 20 caracteres')).toBeInTheDocument()
   })
 
   // ─── Panel de éxito (asíncrono) ─────────────────────────────────────────────
@@ -79,7 +81,7 @@ describe('ContactoForm', () => {
     completarFormulario({ nombre: 'María García' })
     fireEvent.click(screen.getByText('Enviar mensaje'))
     await waitFor(() => {
-      expect(screen.getByText('María García')).toBeInTheDocument()
+      expect(screen.getByText(/María García/)).toBeInTheDocument()
     })
   })
 
@@ -88,7 +90,7 @@ describe('ContactoForm', () => {
     completarFormulario({ email: 'maria@ejemplo.com' })
     fireEvent.click(screen.getByText('Enviar mensaje'))
     await waitFor(() => {
-      expect(screen.getByText('maria@ejemplo.com')).toBeInTheDocument()
+      expect(screen.getByText(/maria@ejemplo\.com/)).toBeInTheDocument()
     })
   })
 
@@ -175,5 +177,28 @@ describe('ContactoForm', () => {
     await waitFor(() => {
       expect(screen.getByText(/erneskrlos@gmail\.com/i)).toBeInTheDocument()
     })
+  })
+
+  // ─── Multilenguaje ───────────────────────────────────────────────────────────
+
+  it('el botón de envío muestra el texto del idioma activo', () => {
+    localStorage.setItem('idioma', 'en')
+    render(
+      <IdiomaProvider>
+        <ContactoForm />
+      </IdiomaProvider>,
+    )
+    expect(screen.getByText('Send message')).toBeInTheDocument()
+  })
+
+  it('los errores de validación se muestran en el idioma activo', () => {
+    localStorage.setItem('idioma', 'en')
+    render(
+      <IdiomaProvider>
+        <ContactoForm />
+      </IdiomaProvider>,
+    )
+    fireEvent.click(screen.getByText('Send message'))
+    expect(screen.getByText('Name is required')).toBeInTheDocument()
   })
 })
