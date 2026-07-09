@@ -17,7 +17,21 @@
     "titulo": "Experiencia Laboral"
   },
   "proyectos": {
-    "titulo": "Proyectos Realizados"
+    "titulo": "Proyectos Realizados",
+    "items": {
+      "sitioCorporativo": {
+        "descripcion": "Desarrollo de sitio web corporativo con diseño moderno y responsivo, enfocado en la presentación de servicios y captación de clientes."
+      },
+      "backoffice": {
+        "descripcion": "Plataforma web de administración interna para gestión de usuarios, reportes y configuraciones del sistema."
+      },
+      "apiMicroservicios": {
+        "descripcion": "Arquitectura de microservicios con API REST para manejo de lógica de negocio distribuida, escalable y mantenible."
+      },
+      "plataformaTurismo": {
+        "descripcion": "Sistema integral de gestión turística con módulos de reservas, clientes y reportes para el sector hotelero."
+      }
+    }
   },
   "habilidades": {
     "titulo": "Habilidades",
