@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "sobreMi": "Sobre mim",
+    "experiencia": "Experiência",
+    "proyectos": "Projetos",
+    "habilidades": "Habilidades",
+    "contacto": "Contato"
+  },
+  "hero": {
+    "saludo": "Olá, sou",
+    "titulo": "Engenheiro de Software",
+    "descripcion": "Desenvolvedor Full Stack com mais de 7 anos de experiência em desenvolvimento de software, especializado em Java Spring Boot e React.js. Sólida trajetória em arquiteturas de microsserviços, APIs REST, bancos de dados relacionais e ambientes cloud (AWS, Azure). Experiência comprovada em sistemas de integração complexos, automação de dados e suporte de infraestrutura Linux.",
+    "btnProyectos": "Ver meus projetos",
+    "btnContacto": "Entrar em contato"
+  },
+  "experiencia": {
+    "titulo": "Experiência Profissional"
+  },
+  "proyectos": {
+    "titulo": "Projetos Realizados"
+  },
+  "habilidades": {
+    "titulo": "Habilidades",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "herramientas": "Ferramentas",
+    "metodologias": "Metodologias"
+  },
+  "contacto": {
+    "titulo": "Contato",
+    "nombre": "Nome completo",
+    "email": "Email",
+    "motivo": "Motivo do contato",
+    "motivoOpciones": {
+      "trabajo": "Trabalho",
+      "freelance": "Projeto freelance",
+      "consulta": "Consulta",
+      "otro": "Outro"
+    },
+    "mensaje": "Mensagem",
+    "btnEnviar": "Enviar mensagem",
+    "btnEnviando": "Enviando...",
+    "btnOtroMensaje": "Enviar outra mensagem",
+    "exito": "Obrigado, {{nombre}}! Sua mensagem foi enviada. Responderei em breve para {{email}}.",
+    "errorEnvio": "Houve um problema ao enviar. Escreva-me diretamente para erneskrlos@gmail.com",
+    "errores": {
+      "nombreRequerido": "O nome é obrigatório",
+      "emailInvalido": "O email não é válido",
+      "motivoRequerido": "Selecione um motivo",
+      "mensajeCorto": "A mensagem deve ter pelo menos 20 caracteres"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Ernesto Carlos Pérez García"
+  }
+}
