@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './ContactoForm.module.css'
 import { enviarEmail } from '../../utils/enviarEmail'
-import { perfil } from '../../data/contenido'
+import { useIdioma } from '../../context/IdiomaContext.jsx'
 
 const ESTADO_INICIAL = {
   nombre: '',
@@ -10,33 +10,38 @@ const ESTADO_INICIAL = {
   mensaje: '',
 }
 
-function validar(campos) {
+function validar(campos, t) {
   const errores = {}
+  const e = t.contacto.errores
 
   if (!campos.nombre.trim()) {
-    errores.nombre = 'El nombre es requerido.'
+    errores.nombre = e.nombreRequerido
   }
 
-  if (!campos.email.trim()) {
-    errores.email = 'El email es requerido.'
-  } else if (!campos.email.includes('@') || !campos.email.includes('.')) {
-    errores.email = 'Ingresá un email válido.'
+  if (!campos.email.trim() || !campos.email.includes('@') || !campos.email.includes('.')) {
+    errores.email = e.emailInvalido
   }
 
   if (!campos.motivo) {
-    errores.motivo = 'Seleccioná un motivo.'
+    errores.motivo = e.motivoRequerido
   }
 
-  if (!campos.mensaje.trim()) {
-    errores.mensaje = 'El mensaje es requerido.'
-  } else if (campos.mensaje.trim().length < 20) {
-    errores.mensaje = 'El mensaje debe tener al menos 20 caracteres.'
+  if (!campos.mensaje.trim() || campos.mensaje.trim().length < 20) {
+    errores.mensaje = e.mensajeCorto
   }
 
   return errores
 }
 
+// Divide la plantilla "...{{nombre}}...{{email}}..." en sus 3 partes de texto
+// para poder resaltar nombre y email con <strong> sin perder el resto del mensaje
+function partesMensajeExito(plantilla) {
+  const [antes, entre, despues] = plantilla.split(/\{\{nombre\}\}|\{\{email\}\}/)
+  return { antes, entre, despues }
+}
+
 function ContactoForm() {
+  const { t } = useIdioma()
   const [campos, setCampos] = useState(ESTADO_INICIAL)
   const [errores, setErrores] = useState({})
   const [enviado, setEnviado] = useState(false)
@@ -56,7 +61,7 @@ function ContactoForm() {
     e.preventDefault()
 
     // 1. Validar — si hay errores, mostrarlos y detener el envío
-    const nuevosErrores = validar(campos)
+    const nuevosErrores = validar(campos, t)
     if (Object.keys(nuevosErrores).length > 0) {
       setErrores(nuevosErrores)
       return
@@ -71,10 +76,7 @@ function ContactoForm() {
     if (resultado.exito) {
       setEnviado(true)
     } else {
-      // El email de contacto directo viene de contenido.js, nunca hardcodeado
-      setErrorEnvio(
-        `Hubo un problema al enviar. Escríbeme directamente a ${perfil.email}`
-      )
+      setErrorEnvio(t.contacto.errorEnvio)
     }
   }
 
@@ -86,16 +88,20 @@ function ContactoForm() {
   }
 
   if (enviado) {
+    const { antes, entre, despues } = partesMensajeExito(t.contacto.exito)
     return (
       <section id="contacto" className={styles.seccion}>
         <div className={styles.contenedor}>
           <div className={styles.panelExito}>
             <p className={styles.mensajeExito}>
-              ¡Gracias <strong>{campos.nombre}</strong>! Tu mensaje fue enviado.
-              Te responderé pronto a <strong>{campos.email}</strong>.
+              {antes}
+              <strong>{campos.nombre}</strong>
+              {entre}
+              <strong>{campos.email}</strong>
+              {despues}
             </p>
             <button onClick={reiniciar} className={styles.botonReiniciar}>
-              Enviar otro mensaje
+              {t.contacto.btnOtroMensaje}
             </button>
           </div>
         </div>
@@ -106,13 +112,13 @@ function ContactoForm() {
   return (
     <section id="contacto" className={styles.seccion}>
       <div className={styles.contenedor}>
-        <h2 className={styles.titulo}>Contacto</h2>
+        <h2 className={styles.titulo}>{t.contacto.titulo}</h2>
 
         <form onSubmit={manejarSubmit} className={styles.formulario} noValidate>
 
           <div className={styles.campo}>
             <label htmlFor="nombre" className={styles.etiqueta}>
-              Nombre completo
+              {t.contacto.nombre}
             </label>
             <input
               id="nombre"
@@ -121,7 +127,6 @@ function ContactoForm() {
               value={campos.nombre}
               onChange={manejarCambio}
               className={`${styles.input} ${errores.nombre ? styles.inputError : ''}`}
-              placeholder="Tu nombre completo"
             />
             {errores.nombre && (
               <span className={styles.error}>{errores.nombre}</span>
@@ -130,7 +135,7 @@ function ContactoForm() {
 
           <div className={styles.campo}>
             <label htmlFor="email" className={styles.etiqueta}>
-              Email
+              {t.contacto.email}
             </label>
             <input
               id="email"
@@ -148,7 +153,7 @@ function ContactoForm() {
 
           <div className={styles.campo}>
             <label htmlFor="motivo" className={styles.etiqueta}>
-              Motivo del contacto
+              {t.contacto.motivo}
             </label>
             <select
               id="motivo"
@@ -157,11 +162,11 @@ function ContactoForm() {
               onChange={manejarCambio}
               className={`${styles.input} ${errores.motivo ? styles.inputError : ''}`}
             >
-              <option value="">Seleccioná un motivo</option>
-              <option value="trabajo">Trabajo</option>
-              <option value="freelance">Proyecto freelance</option>
-              <option value="consulta">Consulta</option>
-              <option value="otro">Otro</option>
+              <option value="">{t.contacto.errores.motivoRequerido}</option>
+              <option value="trabajo">{t.contacto.motivoOpciones.trabajo}</option>
+              <option value="freelance">{t.contacto.motivoOpciones.freelance}</option>
+              <option value="consulta">{t.contacto.motivoOpciones.consulta}</option>
+              <option value="otro">{t.contacto.motivoOpciones.otro}</option>
             </select>
             {errores.motivo && (
               <span className={styles.error}>{errores.motivo}</span>
@@ -170,7 +175,7 @@ function ContactoForm() {
 
           <div className={styles.campo}>
             <label htmlFor="mensaje" className={styles.etiqueta}>
-              Mensaje
+              {t.contacto.mensaje}
             </label>
             <textarea
               id="mensaje"
@@ -178,7 +183,6 @@ function ContactoForm() {
               value={campos.mensaje}
               onChange={manejarCambio}
               className={`${styles.textarea} ${errores.mensaje ? styles.inputError : ''}`}
-              placeholder="Contame en qué puedo ayudarte..."
               rows={5}
             />
             {errores.mensaje && (
@@ -191,7 +195,7 @@ function ContactoForm() {
             className={styles.botonEnviar}
             disabled={enviando}
           >
-            {enviando ? 'Enviando...' : 'Enviar mensaje'}
+            {enviando ? t.contacto.btnEnviando : t.contacto.btnEnviar}
           </button>
 
           {/* Mensaje de error si EmailJS falla */}

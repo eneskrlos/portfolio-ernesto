@@ -1,11 +1,14 @@
 import { experiencia } from '../../data/contenido.js'
+import { useIdioma } from '../../context/IdiomaContext.jsx'
 import styles from './Experiencia.module.css'
 
 function Experiencia() {
+  const { t } = useIdioma()
+
   return (
     <section id="experiencia" className={styles.seccion}>
       <div className={styles.contenedor}>
-        <h2 className={styles.titulo}>Experiencia Laboral</h2>
+        <h2 className={styles.titulo}>{t.experiencia.titulo}</h2>
 
         <ol className={styles.timeline}>
           {experiencia.map((item) => (

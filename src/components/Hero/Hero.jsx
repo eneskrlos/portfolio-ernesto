@@ -1,26 +1,28 @@
 import { useState } from 'react'
 import { perfil } from '../../data/contenido.js'
+import { useIdioma } from '../../context/IdiomaContext.jsx'
 import styles from './Hero.module.css'
 
 function Hero() {
   const [fotoFallo, setFotoFallo] = useState(false)
+  const { t } = useIdioma()
 
   return (
     <section id="sobre-mi" className={styles.hero}>
       <div className={styles.contenedor}>
 
         <div className={styles.columnaTexto}>
-          <p className={styles.saludo}>Hola, soy</p>
+          <p className={styles.saludo}>{t.hero.saludo}</p>
           <h1 className={styles.nombre}>{perfil.nombre}</h1>
-          <h2 className={styles.titulo}>{perfil.titulo}</h2>
-          <p className={styles.descripcion}>{perfil.descripcion}</p>
+          <h2 className={styles.titulo}>{t.hero.titulo}</h2>
+          <p className={styles.descripcion}>{t.hero.descripcion}</p>
 
           <div className={styles.botones}>
             <a href="#proyectos" className={styles.botonPrimario}>
-              Ver mis proyectos
+              {t.hero.btnProyectos}
             </a>
             <a href="#contacto" className={styles.botonSecundario}>
-              Contactarme
+              {t.hero.btnContacto}
             </a>
           </div>
         </div>

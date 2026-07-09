@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "sobreMi": "About me",
+    "experiencia": "Experience",
+    "proyectos": "Projects",
+    "habilidades": "Skills",
+    "contacto": "Contact"
+  },
+  "hero": {
+    "saludo": "Hi, I'm",
+    "titulo": "Software Engineer",
+    "descripcion": "Full Stack Developer with over 7 years of experience in software development, specialized in Java Spring Boot and React.js. Solid track record in microservices architectures, REST APIs, relational databases, and cloud environments (AWS, Azure). Proven experience in complex integration systems, data automation, and Linux infrastructure support.",
+    "btnProyectos": "View my projects",
+    "btnContacto": "Contact me"
+  },
+  "experiencia": {
+    "titulo": "Work Experience"
+  },
+  "proyectos": {
+    "titulo": "Featured Projects",
+    "items": {
+      "sitioCorporativo": {
+        "descripcion": "Development of a corporate website with a modern, responsive design, focused on showcasing services and attracting clients."
+      },
+      "backoffice": {
+        "descripcion": "Internal administration web platform for managing users, reports, and system settings."
+      },
+      "apiMicroservicios": {
+        "descripcion": "Microservices architecture with a REST API for handling distributed, scalable, and maintainable business logic."
+      },
+      "plataformaTurismo": {
+        "descripcion": "Comprehensive tourism management system with modules for bookings, clients, and reports for the hospitality sector."
+      }
+    }
+  },
+  "habilidades": {
+    "titulo": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "herramientas": "Tools",
+    "metodologias": "Methodologies"
+  },
+  "contacto": {
+    "titulo": "Contact",
+    "nombre": "Full name",
+    "email": "Email",
+    "motivo": "Reason for contact",
+    "motivoOpciones": {
+      "trabajo": "Job opportunity",
+      "freelance": "Freelance project",
+      "consulta": "Inquiry",
+      "otro": "Other"
+    },
+    "mensaje": "Message",
+    "btnEnviar": "Send message",
+    "btnEnviando": "Sending...",
+    "btnOtroMensaje": "Send another message",
+    "exito": "Thank you, {{nombre}}! Your message has been sent. I'll get back to you soon at {{email}}.",
+    "errorEnvio": "There was a problem sending your message. Email me directly at erneskrlos@gmail.com",
+    "errores": {
+      "nombreRequerido": "Name is required",
+      "emailInvalido": "Email is not valid",
+      "motivoRequerido": "Select a reason",
+      "mensajeCorto": "Message must be at least 20 characters long"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Ernesto Carlos Pérez García"
+  }
+}
