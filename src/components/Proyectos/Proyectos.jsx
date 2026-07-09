@@ -12,9 +12,9 @@ function Proyectos() {
 
         <div className={styles.grilla}>
           {proyectos.map((proyecto) => (
-            <article key={proyecto.titulo} className={styles.tarjeta}>
+            <article key={proyecto.id} className={styles.tarjeta}>
               <h3 className={styles.tituloProyecto}>{proyecto.titulo}</h3>
-              <p className={styles.descripcion}>{proyecto.descripcion}</p>
+              <p className={styles.descripcion}>{t.proyectos.items[proyecto.id].descripcion}</p>
 
               <ul className={styles.listaBadges} aria-label="Tecnologías utilizadas">
                 {proyecto.tecnologias.map((tech) => (

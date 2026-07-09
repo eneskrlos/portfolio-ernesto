@@ -47,29 +47,28 @@ export const experiencia = [
   },
 ]
 
+// La descripción de cada proyecto vive en src/locales/{es,en,pt}.json
+// (bajo proyectos.items.<id>.descripcion) para poder traducirse; acá solo
+// queda el dato que NO se traduce: id, título y tecnologías.
 export const proyectos = [
   {
+    id: 'sitioCorporativo',
     titulo: 'Sitio Web Corporativo',
-    descripcion:
-      'Desarrollo de sitio web corporativo con diseño moderno y responsivo, enfocado en la presentación de servicios y captación de clientes.',
     tecnologias: ['React', 'Next.js', 'Material UI'],
   },
   {
+    id: 'backoffice',
     titulo: 'Sitio Web de Gestión Backoffice',
-    descripcion:
-      'Plataforma web de administración interna para gestión de usuarios, reportes y configuraciones del sistema.',
     tecnologias: ['React', 'Next.js', 'Material UI'],
   },
   {
+    id: 'apiMicroservicios',
     titulo: 'API REST con Microservicios',
-    descripcion:
-      'Arquitectura de microservicios con API REST para manejo de lógica de negocio distribuida, escalable y mantenible.',
     tecnologias: ['Java', 'Spring Boot', 'JPA', 'Maven'],
   },
   {
+    id: 'plataformaTurismo',
     titulo: 'Plataforma de Gestión para el Turismo',
-    descripcion:
-      'Sistema integral de gestión turística con módulos de reservas, clientes y reportes para el sector hotelero.',
     tecnologias: ['Vue.js', 'Bootstrap', 'C#', 'ASP.NET Core'],
   },
 ]

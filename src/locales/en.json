@@ -17,7 +17,21 @@
     "titulo": "Work Experience"
   },
   "proyectos": {
-    "titulo": "Featured Projects"
+    "titulo": "Featured Projects",
+    "items": {
+      "sitioCorporativo": {
+        "descripcion": "Development of a corporate website with a modern, responsive design, focused on showcasing services and attracting clients."
+      },
+      "backoffice": {
+        "descripcion": "Internal administration web platform for managing users, reports, and system settings."
+      },
+      "apiMicroservicios": {
+        "descripcion": "Microservices architecture with a REST API for handling distributed, scalable, and maintainable business logic."
+      },
+      "plataformaTurismo": {
+        "descripcion": "Comprehensive tourism management system with modules for bookings, clients, and reports for the hospitality sector."
+      }
+    }
   },
   "habilidades": {
     "titulo": "Skills",

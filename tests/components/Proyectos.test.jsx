@@ -1,9 +1,14 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import Proyectos from '../../src/components/Proyectos/Proyectos.jsx'
 import { proyectos } from '../../src/data/contenido.js'
+import { IdiomaProvider } from '../../src/context/IdiomaContext.jsx'
 
 describe('Proyectos', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
   it('renderiza exactamente 4 tarjetas de proyectos', () => {
     render(<Proyectos />)
     const tarjetas = screen.getAllByRole('article')
@@ -28,5 +33,15 @@ describe('Proyectos', () => {
   it('el proyecto "API REST con Microservicios" aparece en el listado', () => {
     render(<Proyectos />)
     expect(screen.getByText('API REST con Microservicios')).toBeInTheDocument()
+  })
+
+  it('muestra la descripción del proyecto traducida al idioma activo', () => {
+    localStorage.setItem('idioma', 'en')
+    render(
+      <IdiomaProvider>
+        <Proyectos />
+      </IdiomaProvider>,
+    )
+    expect(screen.getByText(/Development of a corporate website/)).toBeInTheDocument()
   })
 })

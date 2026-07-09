@@ -28,10 +28,10 @@ describe('proyectos', () => {
     expect(proyectos).toHaveLength(4)
   })
 
-  it('cada proyecto tiene titulo, descripcion y array de tecnologias', () => {
+  it('cada proyecto tiene id, titulo y array de tecnologias', () => {
     proyectos.forEach((proyecto) => {
+      expect(proyecto.id).toBeTruthy()
       expect(proyecto.titulo).toBeTruthy()
-      expect(proyecto.descripcion).toBeTruthy()
       expect(Array.isArray(proyecto.tecnologias)).toBe(true)
       expect(proyecto.tecnologias.length).toBeGreaterThan(0)
     })
