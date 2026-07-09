@@ -27,4 +27,15 @@ describe('Header', () => {
     const linkLinkedIn = screen.getByText('LinkedIn')
     expect(linkLinkedIn).toHaveAttribute('rel', 'noreferrer')
   })
+
+  it('el botón de tema está presente en el Header', () => {
+    render(<Header />)
+    expect(screen.getByRole('button')).toBeInTheDocument()
+  })
+
+  it('el botón de tema tiene aria-label descriptivo', () => {
+    render(<Header />)
+    const botonTema = screen.getByRole('button')
+    expect(botonTema).toHaveAttribute('aria-label', 'Activar modo oscuro')
+  })
 })
