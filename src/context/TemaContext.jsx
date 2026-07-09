@@ -39,6 +39,9 @@ export function TemaProvider({ children }) {
   return <TemaContext.Provider value={{ tema, toggleTema }}>{children}</TemaContext.Provider>
 }
 
+// El hook se co-ubica con el Provider a propósito (patrón Context de React);
+// esto le quita granularidad al Fast Refresh de Vite, pero es aceptable aquí
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTema() {
   return useContext(TemaContext)
 }
