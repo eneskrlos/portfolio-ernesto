@@ -44,4 +44,18 @@ describe('Proyectos', () => {
     )
     expect(screen.getByText(/Development of a corporate website/)).toBeInTheDocument()
   })
+
+  it('las tarjetas tienen clase CSS que indica estado de animación', () => {
+    render(<Proyectos />)
+    const tarjetas = screen.getAllByRole('article')
+    tarjetas.forEach((tarjeta) => {
+      expect(tarjeta.className).toMatch(/tarjeta/)
+    })
+  })
+
+  it('la cantidad de tarjetas renderizadas no cambia con la animación', () => {
+    render(<Proyectos />)
+    const tarjetas = screen.getAllByRole('article')
+    expect(tarjetas).toHaveLength(proyectos.length)
+  })
 })
