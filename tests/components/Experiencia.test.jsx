@@ -29,4 +29,18 @@ describe('Experiencia', () => {
       expect(screen.getByText(item.periodo)).toBeInTheDocument()
     })
   })
+
+  it('los ítems tienen clase CSS que indica estado de animación', () => {
+    render(<Experiencia />)
+    const items = screen.getAllByRole('listitem')
+    items.forEach((item) => {
+      expect(item.className).toMatch(/item/)
+    })
+  })
+
+  it('la cantidad de ítems renderizados no cambia con la animación', () => {
+    render(<Experiencia />)
+    const items = screen.getAllByRole('listitem')
+    expect(items).toHaveLength(experiencia.length)
+  })
 })

@@ -42,10 +42,26 @@
   align-items: flex-start;
   gap: 20px;
   padding-bottom: 36px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .item:last-child {
   padding-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Punto circular sobre la línea */
