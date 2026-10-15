@@ -22,6 +22,10 @@ automatización de datos y soporte de infraestructura Linux.
 
 export const experiencia = [
   {
+    empresa: 'Autónomo',
+    periodo: 'Jul 2026 – Actualidad',
+  },
+  {
     empresa: 'Bold MSS',
     periodo: 'Jun 2025 – Mar 2026',
   },
@@ -52,6 +56,13 @@ export const experiencia = [
 // queda el dato que NO se traduce: id, título y tecnologías.
 export const proyectos = [
   {
+    id: 'sistemaGestionLabDental',
+    titulo: 'Sistema de Gestión para Laboratorio Dental',
+    tecnologias: ['Java 17', 'Spring Boot', 'Spring Security', 'JWT ', 'Flyway', 
+      'JPA', 'PostgreSQL', 'Docker', 'React', 'Vite', 'TanStack Query', 'CSS responsive', 
+      'Electron', 'electron-builder', 'PowerShell', 'GitHub Actions', 'Docker', 'Git Flow'],
+  },
+  {
     id: 'sitioCorporativo',
     titulo: 'Sitio Web Corporativo',
     tecnologias: ['React', 'Next.js', 'Material UI'],
@@ -69,14 +80,15 @@ export const proyectos = [
   {
     id: 'plataformaTurismo',
     titulo: 'Plataforma de Gestión para el Turismo',
-    tecnologias: ['Vue.js', 'Bootstrap', 'C#', 'ASP.NET Core'],
+    tecnologias: ['Vue.js', 'Bootstrap', 'C#', 'ASP.NET Core', 'SQL Server'],
   },
 ]
 
 export const habilidades = {
   frontend: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Vue.js', 'Material UI', 'Bootstrap'],
-  backend: ['Node.js', 'C#', 'ASP.NET', 'ASP.NET Core', 'Java', 'Spring Boot', 'JPA', 'Maven'],
-  herramientas: ['Git', 'GitFlow','GitHub', 'Docker', 'AWS', 'Linux', 'Power Automate', 'Power BI', 'Proxmox', 'Web Scraping'],
+  backend: ['Node.js', 'C#', 'ASP.NET', 'ASP.NET Core', 'Java', 'Spring Boot', 'JPA', 'Maven', 'Spring Security', 'JWT', 'Flyway'],
+  herramientas: ['Git', 'GitFlow','GitHub', 'Docker', 'AWS', 'Linux', 'Power Automate', 'Power BI', 'Proxmox', 'Web Scraping', 'Electron', 
+    'electron-builder', 'PowerShell', 'GitHub Actions', 'PostgreSQL', 'MySQL', 'SQL Server', 'Docker', 'Postman', 'Swagger', 'Jira', 'Figma'],
   metodologias: ['Spec Driven Development ','REST' ,'MVC ', 'Scrum / Agile'],
 }
 

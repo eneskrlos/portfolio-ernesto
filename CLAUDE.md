@@ -77,8 +77,8 @@ Herramientas: Git, GitHub
 
 ## Reglas para el agente
 ## Spec activa
-- Versión actual: docs/spec-v1.1.md
-- Versión anterior: docs/spec-v1.0.md (referencia histórica, no modificar)
+- Versión actual: docs/spec-v1.2.md
+- Versión anterior: docs/spec-v1.1.md (referencia histórica, no modificar)
 
 ### Lo que SIEMPRE debes hacer
 - Leer docs/spec.md antes de implementar cualquier cosa

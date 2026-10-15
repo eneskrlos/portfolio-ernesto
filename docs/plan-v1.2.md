@@ -1,5 +1,5 @@
 # Plan v1.2 — Multilenguaje, Animaciones y Modo Oscuro
-**Estado**: ⏳ Pendiente de aprobación
+**Estado**: ✅ Completado
 **Basado en**: docs/spec-v1.2.md
 **Prerrequisito**: plan-emailjs.md completado
 
@@ -47,7 +47,7 @@ cualquier color hardcodeado por su variable correspondiente. Por ejemplo:
 **Verificación visual:**
 Abrir en el navegador y confirmar que los colores se ven igual que antes.
 
-**⏸ ESPERAR CONFIRMACIÓN antes de continuar con Tarea II**
+**✅ Confirmado**
 
 **Commit:** `refactor: migrar todos los colores a variables CSS`
 
@@ -97,7 +97,7 @@ Agregar el botón de tema al `Header`:
 - Recargar la página: el modo oscuro persiste
 - Verificar que todos los componentes se ven correctamente en modo oscuro
 
-**⏸ ESPERAR CONFIRMACIÓN antes de continuar con Tarea III**
+**✅ Confirmado**
 
 **Commit:** `feat: modo oscuro con TemaContext y toggle en Header`
 
@@ -152,7 +152,7 @@ Completar TODAS las claves del JSON para los tres idiomas.
 ✓ los valores de pt.json son diferentes a los de es.json
 ```
 
-**⏸ ESPERAR CONFIRMACIÓN antes de continuar con Tarea IV**
+**✅ Confirmado**
 
 **Commit:** `feat: archivos JSON de traducción para ES, EN y PT`
 
@@ -189,7 +189,7 @@ Envolver `<App />` con `<IdiomaProvider>` en `src/main.jsx`
 ✓ cambiarIdioma con un código inválido no cambia el idioma
 ```
 
-**⏸ ESPERAR CONFIRMACIÓN antes de continuar con Tarea V**
+**✅ Confirmado**
 
 **Commit:** `feat: IdiomaContext con soporte ES/EN/PT y persistencia`
 
@@ -253,7 +253,7 @@ ContactoForm
   ✓ los errores de validación se muestran en el idioma activo
 ```
 
-**⏸ ESPERAR CONFIRMACIÓN antes de continuar con Tarea VI**
+**✅ Confirmado**
 
 **Commit:** `feat: multilenguaje conectado a todos los componentes`
 
@@ -313,7 +313,7 @@ más la regla `prefers-reduced-motion` definidas en spec-v1.2.md sección 2.2.
 ✓ la cantidad de ítems renderizados no cambia con la animación
 ```
 
-**⏸ ESPERAR CONFIRMACIÓN antes de continuar con Tarea VII**
+**✅ Confirmado**
 
 **Commit:** `feat: hook useScrollAnimation y animación en Experiencia`
 
@@ -345,7 +345,7 @@ más la regla `prefers-reduced-motion` definidas en spec-v1.2.md sección 2.3.
 - Activar `prefers-reduced-motion` en DevTools y verificar que las animaciones
   no ocurren (los elementos son visibles directamente)
 
-**⏸ ESPERAR CONFIRMACIÓN antes de continuar con Tarea VIII**
+**✅ Confirmado**
 
 **Commit:** `feat: animación de scroll en tarjetas de Proyectos`
 
@@ -357,13 +357,13 @@ más la regla `prefers-reduced-motion` definidas en spec-v1.2.md sección 2.3.
 
 1. Correr `npm test` → todos los tests deben pasar
 2. Verificación visual completa en modo claro y modo oscuro:
-   - [ ] Selector de idioma cambia toda la UI en ES, EN y PT
-   - [ ] El idioma persiste al recargar
-   - [ ] Modo oscuro aplica los colores correctos en todas las secciones
-   - [ ] El tema persiste al recargar
-   - [ ] Los ítems de Experiencia animan al hacer scroll
-   - [ ] Las tarjetas de Proyectos animan al hacer scroll
-   - [ ] El Header muestra: logo | nav | LinkedIn | ES/EN/PT | 🌙☀️
+   - [x] Selector de idioma cambia toda la UI en ES, EN y PT
+   - [x] El idioma persiste al recargar
+   - [x] Modo oscuro aplica los colores correctos en todas las secciones
+   - [x] El tema persiste al recargar
+   - [x] Los ítems de Experiencia animan al hacer scroll
+   - [x] Las tarjetas de Proyectos animan al hacer scroll
+   - [x] El Header muestra: logo | nav | LinkedIn | ES/EN/PT | 🌙☀️
 3. Correr `npm run build` → sin errores
 4. Hacer push a GitHub:
 ```bash
@@ -373,7 +373,7 @@ Vercel redeploya automáticamente.
 5. Verificar en `portfolio-ernesto.vercel.app` que todo funciona en producción
 6. Actualizar `CLAUDE.md` → sección "Spec activa" → versión 1.2
 
-**⏸ ESPERAR CONFIRMACIÓN del desarrollador**
+**✅ Confirmado**
 
 **Commit:** `chore: v1.2 completa — multilenguaje, animaciones y modo oscuro`
 
@@ -383,14 +383,14 @@ Vercel redeploya automáticamente.
 
 | # | Tarea | Tests | Estado |
 |---|---|---|---|
-| I | Variables CSS globales | 5 tests | ⏳ |
-| II | Modo oscuro + TemaContext | 7 tests | ⏳ |
-| III | JSON de traducciones | 8 tests | ⏳ |
-| IV | IdiomaContext | 7 tests | ⏳ |
-| V | Conectar traducciones a componentes | 8 tests | ⏳ |
-| VI | Hook animación + Experiencia | 5 tests | ⏳ |
-| VII | Animación Proyectos | 2 tests | ⏳ |
-| VIII | Revisión final + deploy | Build + visual | ⏳ |
+| I | Variables CSS globales | 5 tests | ✅ |
+| II | Modo oscuro + TemaContext | 7 tests | ✅ |
+| III | JSON de traducciones | 8 tests | ✅ |
+| IV | IdiomaContext | 7 tests | ✅ |
+| V | Conectar traducciones a componentes | 8 tests | ✅ |
+| VI | Hook animación + Experiencia | 5 tests | ✅ |
+| VII | Animación Proyectos | 2 tests | ✅ |
+| VIII | Revisión final + deploy | Build + visual | ✅ |
 
 **Tests nuevos en v1.2: 42**
 **Total acumulado del proyecto: 96 tests**
