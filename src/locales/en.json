@@ -19,6 +19,9 @@
   "proyectos": {
     "titulo": "Featured Projects",
     "items": {
+      "sistemaGestionLabDental": {
+        "descripcion": "Lab. Garcia's Connect is a system used by a dental laboratory to manage work commissioned by dentists—such as orthodontic appliances, including expanders, active plates, or face masks. It began as a web app and later evolved into a Windows desktop application for a second branch of the same laboratory. "
+      },
       "sitioCorporativo": {
         "descripcion": "Development of a corporate website with a modern, responsive design, focused on showcasing services and attracting clients."
       },

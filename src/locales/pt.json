@@ -19,6 +19,9 @@
   "proyectos": {
     "titulo": "Projetos Realizados",
     "items": {
+      "sistemaGestionLabDental": {
+        "descripcion": "O Lab. Garcia's Connect é o sistema por meio do qual um laboratório odontológico gerencia os trabalhos encomendados por dentistas: aparelhos ortodônticos, como disjuntores, placas ativas ou máscaras faciais. Surgiu como um aplicativo web e evoluiu para um aplicativo desktop para Windows, destinado a uma segunda unidade do mesmo laboratório. "
+      },
       "sitioCorporativo": {
         "descripcion": "Desenvolvimento de site corporativo com design moderno e responsivo, focado na apresentação de serviços e captação de clientes."
       },
